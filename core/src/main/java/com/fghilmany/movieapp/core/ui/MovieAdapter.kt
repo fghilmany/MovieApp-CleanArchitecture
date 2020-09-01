@@ -1,4 +1,4 @@
-package com.fghilmany.movieapp.presentation.favorite.tvseries
+package com.fghilmany.movieapp.core.ui
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -8,16 +8,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.fghilmany.movieapp.R
-import com.fghilmany.movieapp.core.data.source.local.entity.TvSeriesEntity
+import com.fghilmany.movieapp.core.R
+import com.fghilmany.movieapp.core.domain.model.Movie
 import com.fghilmany.movieapp.core.domain.model.TvSeries
-import com.fghilmany.movieapp.presentation.detail.DetailActivity
 import kotlinx.android.synthetic.main.item_movie_tv.view.*
 
-class FavoriteTvSeriesAdapter : RecyclerView.Adapter<FavoriteTvSeriesAdapter.TvViewHolder>(){
-    private var listMovie = ArrayList<TvSeries>()
+class MovieAdapter(private val listener: (Movie) -> (Unit)) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
+    private var listMovie = ArrayList<Movie>()
 
-    fun setMovies(movies: List<TvSeries>?){
+    fun setMovies(movies: List<Movie>?){
         if (movies == null) return
         listMovie.clear()
         listMovie.addAll(movies)
@@ -26,30 +25,28 @@ class FavoriteTvSeriesAdapter : RecyclerView.Adapter<FavoriteTvSeriesAdapter.TvV
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): TvViewHolder {
+    ): MovieViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_movie_tv, parent, false)
-        return TvViewHolder(view)
+        return MovieViewHolder(view)
     }
 
     override fun getItemCount(): Int = listMovie.size
 
-    override fun onBindViewHolder(holder: TvViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val movies = listMovie[position]
-        holder.bind(movies)
+        holder.bind(movies, listener)
     }
 
-    class TvViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class MovieViewHolder(view: View): RecyclerView.ViewHolder(view) {
         @SuppressLint("SetTextI18n")
-        fun bind (movie: TvSeries){
+        fun bind (movie: Movie, listener: (Movie) -> Unit){
             with(itemView){
-                tv_list_title.text = movie.name
+                tv_list_title.text = movie.title
                 tv_rating.text = movie.voteAverage.toString()
-                rating_bar.rating = (movie.voteAverage/2)
-                tv_date.text ="First air date: " + movie.first_air_date
+                rating_bar.rating = movie.voteAverage/2
+                tv_date.text = "Realease date: " + movie.release_date
                 setOnClickListener {
-                    val i = Intent(itemView.context, DetailActivity::class.java)
-                    i.putExtra(DetailActivity.EXTRA_ID_TV, movie.id.toString())
-                    itemView.context.startActivity(i)
+                    listener(movie)
                 }
                 Glide.with(context)
                     .load("https://image.tmdb.org/t/p/w780"+movie.posterPath)

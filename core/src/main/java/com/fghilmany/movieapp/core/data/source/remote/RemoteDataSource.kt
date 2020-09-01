@@ -1,7 +1,7 @@
 package com.fghilmany.movieapp.core.data.source.remote
 
 import android.util.Log
-import com.fghilmany.movieapp.BuildConfig
+import com.fghilmany.movieapp.core.BuildConfig
 import com.fghilmany.movieapp.core.data.source.remote.network.ApiResponse
 import com.fghilmany.movieapp.core.data.source.remote.response.*
 import com.fghilmany.movieapp.core.data.source.remote.network.ApiService

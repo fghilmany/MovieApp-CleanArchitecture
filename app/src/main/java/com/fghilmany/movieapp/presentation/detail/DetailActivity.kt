@@ -81,7 +81,7 @@ class DetailActivity : AppCompatActivity() {
                                 is Resource.Success ->{
                                     progress_bar.visibility = View.GONE
                                     populateTvSeries(tv.data!!)
-                                    state = tv.data.favorite
+                                    state = tv.data!!.favorite
                                     setFavoriteState(state)
                                 }
                                 is Resource.Error -> {

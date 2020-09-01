@@ -1,5 +1,6 @@
 package com.fghilmany.movieapp.presentation.tvseries
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,8 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fghilmany.movieapp.R
 import com.fghilmany.movieapp.core.data.Resource
+import com.fghilmany.movieapp.core.ui.TvSeriesAdapter
+import com.fghilmany.movieapp.presentation.detail.DetailActivity
 import kotlinx.android.synthetic.main.fragment_tv_series.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -31,7 +34,11 @@ class TvSeriesFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         if (activity != null){
 
-            val movieAdapter = TvSeriesAdapter()
+            val movieAdapter = TvSeriesAdapter{tv ->
+                val i = Intent(activity, DetailActivity::class.java)
+                i.putExtra(DetailActivity.EXTRA_ID_TV, tv.id.toString())
+                startActivity(i)
+            }
             viewModel.getMovies().observe(this, Observer {tv ->
                 if (tv != null){
                     when(tv){

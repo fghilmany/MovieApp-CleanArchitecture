@@ -1,7 +1,7 @@
 package com.fghilmany.movieapp.core.di
 
 import androidx.room.Room
-import com.fghilmany.movieapp.BuildConfig
+import com.fghilmany.movieapp.core.BuildConfig
 import com.fghilmany.movieapp.core.data.DataRepository
 import com.fghilmany.movieapp.core.domain.repository.IDataRepository
 import com.fghilmany.movieapp.core.data.source.local.LocalDataSource
@@ -57,5 +57,11 @@ val repositoryModule = module {
     single { RemoteDataSource(get()) }
     single { LocalDataSource(get()) }
     factory { AppExecutors() }
-    single<IDataRepository> { DataRepository(get(), get(), get()) }
+    single<IDataRepository> {
+        DataRepository(
+            get(),
+            get(),
+            get()
+        )
+    }
 }
