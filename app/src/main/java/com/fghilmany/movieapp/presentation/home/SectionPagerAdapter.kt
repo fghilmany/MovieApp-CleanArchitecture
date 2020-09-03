@@ -9,21 +9,23 @@ import com.fghilmany.movieapp.R
 import com.fghilmany.movieapp.presentation.movie.MovieFragment
 import com.fghilmany.movieapp.presentation.tvseries.TvSeriesFragment
 
-class SectionPagerAdapter (private val mContext: Context, fm: FragmentManager): FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT){
+class SectionPagerAdapter(private val mContext: Context, fm: FragmentManager) :
+    FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
-    companion object{
+    companion object {
         @StringRes
-        private val TAB_TITLES = intArrayOf(R.string.movie,R.string.tv)
+        private val TAB_TITLES = intArrayOf(R.string.movie, R.string.tv)
     }
 
     override fun getItem(position: Int): Fragment =
-        when (position){
+        when (position) {
             0 -> MovieFragment()
             1 -> TvSeriesFragment()
             else -> Fragment()
         }
 
-    override fun getPageTitle(position: Int): CharSequence? = mContext.resources.getString(TAB_TITLES[position])
+    override fun getPageTitle(position: Int): CharSequence? =
+        mContext.resources.getString(TAB_TITLES[position])
 
     override fun getCount(): Int = 2
 

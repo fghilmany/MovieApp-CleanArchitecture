@@ -30,18 +30,19 @@ class TvSeriesFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_tv_series, container, false)
     }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        if (activity != null){
+        if (activity != null) {
 
-            val movieAdapter = TvSeriesAdapter{tv ->
+            val movieAdapter = TvSeriesAdapter { tv ->
                 val i = Intent(activity, DetailActivity::class.java)
                 i.putExtra(DetailActivity.EXTRA_ID_TV, tv.id.toString())
                 startActivity(i)
             }
-            viewModel.getMovies().observe(this, Observer {tv ->
-                if (tv != null){
-                    when(tv){
+            viewModel.getMovies().observe(viewLifecycleOwner, Observer { tv ->
+                if (tv != null) {
+                    when (tv) {
                         is Resource.Loading -> progress_bar.visibility = View.VISIBLE
                         is Resource.Success -> {
                             progress_bar.visibility = View.GONE

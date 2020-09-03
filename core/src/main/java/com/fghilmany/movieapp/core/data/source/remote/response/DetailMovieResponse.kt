@@ -22,4 +22,4 @@ data class DetailMovieResponse(
     var status: String = "",
     @SerializedName("release_date")
     var release_date: String = ""
-):Parcelable
+) : Parcelable

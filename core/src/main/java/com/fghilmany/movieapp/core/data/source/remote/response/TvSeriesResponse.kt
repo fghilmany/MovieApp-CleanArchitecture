@@ -16,4 +16,4 @@ data class TvSeriesResponse(
     var voteAverage: Float = 0f,
     @SerializedName("first_air_date")
     var first_air_date: String = ""
-): Parcelable
+) : Parcelable

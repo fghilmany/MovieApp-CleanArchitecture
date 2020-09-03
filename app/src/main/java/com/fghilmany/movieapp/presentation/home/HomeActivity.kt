@@ -1,6 +1,7 @@
 package com.fghilmany.movieapp.presentation.home
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -26,6 +27,7 @@ class HomeActivity : AppCompatActivity() {
 
         val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
+        supportActionBar?.title = ""
         supportActionBar?.elevation = 0f
 
     }
@@ -36,9 +38,13 @@ class HomeActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
+        when (item.itemId) {
             R.id.action_favorite -> {
                 startActivity(Intent(this, FavoriteActivity::class.java))
+            }
+            R.id.action_notification -> {
+                val uri = Uri.parse("movieapp://notification")
+                startActivity(Intent(Intent.ACTION_VIEW, uri))
             }
         }
         return super.onOptionsItemSelected(item)

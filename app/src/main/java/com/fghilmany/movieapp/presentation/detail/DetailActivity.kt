@@ -23,7 +23,7 @@ class DetailActivity : AppCompatActivity() {
     private val viewModel: DetailViewModel by viewModel()
     private var state: Boolean = false
 
-    companion object{
+    companion object {
         const val EXTRA_ID_MOVIE = "extra_id_movie"
         const val EXTRA_ID_TV = "extra_id_tv"
     }
@@ -33,17 +33,17 @@ class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
 
         val extras = intent.extras
-        if (extras != null){
+        if (extras != null) {
             val idMovie = extras.getString(EXTRA_ID_MOVIE)
             val idTv = extras.getString(EXTRA_ID_TV)
             progress_bar.visibility = View.VISIBLE
-            if (idMovie != null){
+            if (idMovie != null) {
                 viewModel.selectedMovie(idMovie)
-                viewModel.getDetailMovie?.observe(this, Observer {movie ->
-                    if (movie != null){
-                        when (movie){
+                viewModel.getDetailMovie?.observe(this, Observer { movie ->
+                    if (movie != null) {
+                        when (movie) {
                             is Resource.Loading -> progress_bar.visibility = View.VISIBLE
-                            is Resource.Success->{
+                            is Resource.Success -> {
                                 progress_bar.visibility = View.GONE
                                 populateMovie(movie.data)
                                 state = movie.data!!.favorite
@@ -65,20 +65,20 @@ class DetailActivity : AppCompatActivity() {
                         viewModel.setFavoriteMovie()
                         btn_favorite.text = resources.getText(R.string.remove_from_favorite)
                         btn_favorite.icon = ContextCompat.getDrawable(this, R.drawable.ic_remove)
-                    }else{
+                    } else {
                         viewModel.setFavoriteMovie()
                         btn_favorite.text = resources.getText(R.string.add_to_favorite)
                         btn_favorite.icon = ContextCompat.getDrawable(this, R.drawable.ic_add)
                     }
                 }
-            }else{
+            } else {
                 if (idTv != null) {
                     viewModel.selectedTvSeries(idTv)
-                    viewModel.getDetailTvSeries.observe(this, Observer {tv ->
-                        if (tv != null){
-                            when (tv){
+                    viewModel.getDetailTvSeries.observe(this, Observer { tv ->
+                        if (tv != null) {
+                            when (tv) {
                                 is Resource.Loading -> progress_bar.visibility = View.VISIBLE
-                                is Resource.Success ->{
+                                is Resource.Success -> {
                                     progress_bar.visibility = View.GONE
                                     populateTvSeries(tv.data!!)
                                     state = tv.data!!.favorite
@@ -86,7 +86,8 @@ class DetailActivity : AppCompatActivity() {
                                 }
                                 is Resource.Error -> {
                                     progress_bar.visibility = View.GONE
-                                    Toast.makeText(this, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(this, "Terjadi kesalahan", Toast.LENGTH_SHORT)
+                                        .show()
                                 }
 
                             }
@@ -96,8 +97,9 @@ class DetailActivity : AppCompatActivity() {
                         if (state) {
                             viewModel.setFavoriteTvSeries()
                             btn_favorite.text = resources.getText(R.string.remove_from_favorite)
-                            btn_favorite.icon = ContextCompat.getDrawable(this, R.drawable.ic_remove)
-                        }else{
+                            btn_favorite.icon =
+                                ContextCompat.getDrawable(this, R.drawable.ic_remove)
+                        } else {
                             viewModel.setFavoriteTvSeries()
                             btn_favorite.text = resources.getText(R.string.add_to_favorite)
                             btn_favorite.icon = ContextCompat.getDrawable(this, R.drawable.ic_add)
@@ -108,12 +110,12 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun setFavoriteState(state: Boolean){
+    private fun setFavoriteState(state: Boolean) {
 
-        if (state){
+        if (state) {
             btn_favorite.text = resources.getText(R.string.remove_from_favorite)
             btn_favorite.icon = ContextCompat.getDrawable(this, R.drawable.ic_remove)
-        }else{
+        } else {
             btn_favorite.text = resources.getText(R.string.add_to_favorite)
             btn_favorite.icon = ContextCompat.getDrawable(this, R.drawable.ic_add)
         }
@@ -124,17 +126,19 @@ class DetailActivity : AppCompatActivity() {
         tv_title.text = detailMovie?.title
         tv_overview.text = detailMovie?.overview
         tv_seasion.visibility = View.GONE
-        tv_status.text = "Status: "+ detailMovie?.status
+        tv_status.text = "Status: " + detailMovie?.status
         tv_rating.text = detailMovie?.voteAverage.toString()
         Glide.with(this)
-            .load("https://image.tmdb.org/t/p/w780"+detailMovie?.posterPath)
-            .apply ( RequestOptions.placeholderOf(R.drawable.ic_loading)
-                .error(R.drawable.ic_error))
+            .load("https://image.tmdb.org/t/p/w780" + detailMovie?.posterPath)
+            .apply(
+                RequestOptions.placeholderOf(R.drawable.ic_loading)
+                    .error(R.drawable.ic_error)
+            )
             .centerCrop()
             .into(iv_poster_detail)
 
         Glide.with(this)
-            .load("https://image.tmdb.org/t/p/w780"+detailMovie?.backdropPath)
+            .load("https://image.tmdb.org/t/p/w780" + detailMovie?.backdropPath)
             .apply(bitmapTransform(BlurTransformation(5, 3)))
             .into(iv_backdrop)
     }
@@ -143,19 +147,22 @@ class DetailActivity : AppCompatActivity() {
     private fun populateTvSeries(detailTvSeries: TvSeries) {
         tv_title.text = detailTvSeries.name
         tv_overview.text = detailTvSeries.overview
-        tv_status.text = "Status: "+ detailTvSeries.status
-        tv_seasion.text = "Season: "+ detailTvSeries.number_of_seasons
+        tv_status.text = "Status: " + detailTvSeries.status
+        tv_seasion.text = "Season: " + detailTvSeries.number_of_seasons
         tv_rating.text = detailTvSeries.voteAverage.toString()
         Glide.with(this)
-            .load("https://image.tmdb.org/t/p/w780"+detailTvSeries.posterPath)
-            .apply ( RequestOptions.placeholderOf(R.drawable.ic_loading)
-                .error(R.drawable.ic_error))
+            .load("https://image.tmdb.org/t/p/w780" + detailTvSeries.posterPath)
+            .apply(
+                RequestOptions.placeholderOf(R.drawable.ic_loading)
+                    .error(R.drawable.ic_error)
+            )
             .centerCrop()
             .into(iv_poster_detail)
 
         Glide.with(this)
-            .load("https://image.tmdb.org/t/p/w780"+detailTvSeries.backdropPath)
+            .load("https://image.tmdb.org/t/p/w780" + detailTvSeries.backdropPath)
             .apply(bitmapTransform(BlurTransformation(5, 1)))
             .into(iv_backdrop)
     }
+
 }

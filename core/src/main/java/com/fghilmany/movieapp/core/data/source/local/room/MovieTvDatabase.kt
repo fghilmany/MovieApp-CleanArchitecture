@@ -1,16 +1,16 @@
 package com.fghilmany.movieapp.core.data.source.local.room
 
-import android.content.Context
 import androidx.room.Database
-import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.fghilmany.movieapp.core.data.source.local.entity.MovieEntity
 import com.fghilmany.movieapp.core.data.source.local.entity.TvSeriesEntity
 
 
-@Database(entities = [MovieEntity::class, TvSeriesEntity::class],
+@Database(
+    entities = [MovieEntity::class, TvSeriesEntity::class],
     version = 1,
-    exportSchema = false)
+    exportSchema = false
+)
 abstract class MovieTvDatabase : RoomDatabase() {
     abstract fun movieTvDao(): MovieTvDao
 }

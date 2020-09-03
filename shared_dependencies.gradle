@@ -14,6 +14,7 @@ dependencies {
     implementation "com.github.florent37:shapeofview:$shapeOfViewVersion"
     implementation "jp.wasabeef:blurry:$wasabefBlur"
     implementation "jp.wasabeef:glide-transformations:4.0.0"
+    implementation 'androidx.preference:preference:1.1.1'
 
     //architecture component
     implementation "androidx.lifecycle:lifecycle-viewmodel:$archLifecycleVersion"

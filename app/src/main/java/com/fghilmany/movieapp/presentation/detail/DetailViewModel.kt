@@ -8,31 +8,32 @@ import com.fghilmany.movieapp.core.domain.usecase.DataUseCase
 
 class DetailViewModel(private val dataUseCase: DataUseCase) : ViewModel() {
 
-    var idMovie  = MutableLiveData<String>()
-    var idTvSeries  = MutableLiveData<String>()
+    var idMovie = MutableLiveData<String>()
+    var idTvSeries = MutableLiveData<String>()
 
-    fun selectedMovie(idMovie:String){
+    fun selectedMovie(idMovie: String) {
         this.idMovie.value = idMovie
     }
 
-    fun selectedTvSeries(idTvSeries: String){
+    fun selectedTvSeries(idTvSeries: String) {
         this.idTvSeries.value = idTvSeries
     }
 
-    var getDetailMovie : LiveData<Resource<Movie>>? = Transformations.switchMap(idMovie){ idMovie ->
+    var getDetailMovie: LiveData<Resource<Movie>>? = Transformations.switchMap(idMovie) { idMovie ->
         dataUseCase.getDetailMovie(idMovie).asLiveData()
     }
 
-    var getDetailTvSeries : LiveData<Resource<TvSeries>> = Transformations.switchMap(idTvSeries){ idTvSeries ->
-        dataUseCase.getDetailTv(idTvSeries).asLiveData()
-    }
+    var getDetailTvSeries: LiveData<Resource<TvSeries>> =
+        Transformations.switchMap(idTvSeries) { idTvSeries ->
+            dataUseCase.getDetailTv(idTvSeries).asLiveData()
+        }
 
 
     fun setFavoriteMovie() {
         val movieResource = getDetailMovie?.value
-        if (movieResource != null){
+        if (movieResource != null) {
             val movie = movieResource.data
-            if (movie != null){
+            if (movie != null) {
                 val newState = !movie.favorite
                 dataUseCase.setMovieFavorite(movie, newState)
             }
@@ -41,10 +42,10 @@ class DetailViewModel(private val dataUseCase: DataUseCase) : ViewModel() {
 
     fun setFavoriteTvSeries() {
         val tvResource = getDetailTvSeries.value
-        if (tvResource != null){
+        if (tvResource != null) {
             val tvSeries = tvResource.data
 
-            if (tvSeries != null){
+            if (tvSeries != null) {
                 val newState = !tvSeries.favorite
                 dataUseCase.setTvSeriesFavorite(tvSeries, newState)
             }

@@ -1,9 +1,12 @@
 package com.fghilmany.movieapp.core.data
 
 import com.fghilmany.movieapp.core.data.source.local.LocalDataSource
-import com.fghilmany.movieapp.core.data.source.remote.network.ApiResponse
 import com.fghilmany.movieapp.core.data.source.remote.RemoteDataSource
-import com.fghilmany.movieapp.core.data.source.remote.response.*
+import com.fghilmany.movieapp.core.data.source.remote.network.ApiResponse
+import com.fghilmany.movieapp.core.data.source.remote.response.DetailMovieResponse
+import com.fghilmany.movieapp.core.data.source.remote.response.DetailTvSeriesResponse
+import com.fghilmany.movieapp.core.data.source.remote.response.MovieResponse
+import com.fghilmany.movieapp.core.data.source.remote.response.TvSeriesResponse
 import com.fghilmany.movieapp.core.domain.model.Movie
 import com.fghilmany.movieapp.core.domain.model.TvSeries
 import com.fghilmany.movieapp.core.domain.repository.IDataRepository
@@ -12,16 +15,17 @@ import com.fghilmany.movieapp.core.utils.DataMapper
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class DataRepository (
+class DataRepository(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
-    private val appExecutors: AppExecutors)
-    : IDataRepository {
+    private val appExecutors: AppExecutors
+) : IDataRepository {
 
     override fun getListMovie(): Flow<Resource<List<Movie>>> {
         return object : NetworkBoundResource<List<Movie>, List<MovieResponse>>() {
             override fun loadFromDB(): Flow<List<Movie>> {
-                return localDataSource.getAllMovies().map { DataMapper.movieMapEntitiesToDomain(it) }
+                return localDataSource.getAllMovies()
+                    .map { DataMapper.movieMapEntitiesToDomain(it) }
             }
 
 
@@ -47,7 +51,8 @@ class DataRepository (
         return object :
             NetworkBoundResource<List<TvSeries>, List<TvSeriesResponse>>() {
             override fun loadFromDB(): Flow<List<TvSeries>> {
-                return localDataSource.getAllTvSeries().map { DataMapper.tvSeriesMapEntitiesToDomain(it) }
+                return localDataSource.getAllTvSeries()
+                    .map { DataMapper.tvSeriesMapEntitiesToDomain(it) }
             }
 
             override fun shouldFetch(data: List<TvSeries>?): Boolean =
@@ -70,7 +75,8 @@ class DataRepository (
     override fun getDetailTv(idTv: String): Flow<Resource<TvSeries>> {
         return object : NetworkBoundResource<TvSeries, DetailTvSeriesResponse>() {
             override fun loadFromDB(): Flow<TvSeries> {
-                return localDataSource.getDetailTvSeries(idTv).map { DataMapper.tvSeriesMapEntityToDomain(it) }
+                return localDataSource.getDetailTvSeries(idTv)
+                    .map { DataMapper.tvSeriesMapEntityToDomain(it) }
             }
 
 
@@ -93,7 +99,8 @@ class DataRepository (
     override fun getDetailMovie(idMovie: String): Flow<Resource<Movie>> {
         return object : NetworkBoundResource<Movie, DetailMovieResponse>() {
             override fun loadFromDB(): Flow<Movie> {
-                return localDataSource.getDetailMovie(idMovie).map { DataMapper.movieMapEntityToDomain(it) }
+                return localDataSource.getDetailMovie(idMovie)
+                    .map { DataMapper.movieMapEntityToDomain(it) }
             }
 
 
@@ -114,12 +121,13 @@ class DataRepository (
     }
 
 
-
     override fun getFavoriteMovie(): Flow<List<Movie>> {
         return localDataSource.getFavoriteMovies().map { DataMapper.movieMapEntitiesToDomain(it) }
     }
+
     override fun getFavoriteTvSeries(): Flow<List<TvSeries>> {
-        return localDataSource.getFavoriteTvSeries().map { DataMapper.tvSeriesMapEntitiesToDomain(it) }
+        return localDataSource.getFavoriteTvSeries()
+            .map { DataMapper.tvSeriesMapEntitiesToDomain(it) }
     }
 
     override fun setMovieFavorite(movie: Movie, state: Boolean) {

@@ -2,13 +2,12 @@ package com.fghilmany.movieapp.presentation.favorite.movie
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-
 import com.fghilmany.movieapp.R
 import com.fghilmany.movieapp.core.ui.FavoriteMovieAdapter
 import com.fghilmany.movieapp.presentation.detail.DetailActivity
@@ -20,7 +19,7 @@ import org.koin.android.viewmodel.ext.android.viewModel
  */
 class FavoriteMovieFragment : Fragment() {
 
-    private val viewModel : FavoriteMovieViewModel by viewModel()
+    private val viewModel: FavoriteMovieViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,13 +33,13 @@ class FavoriteMovieFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         if (activity != null) {
 
-            val favoriteAdapter = FavoriteMovieAdapter{movie ->
+            val favoriteAdapter = FavoriteMovieAdapter { movie ->
                 val i = Intent(activity, DetailActivity::class.java)
                 i.putExtra(DetailActivity.EXTRA_ID_MOVIE, movie.id.toString())
                 startActivity(i)
-                }
-            viewModel.getMovies().observe(this, Observer { movie ->
-                if (movie != null){
+            }
+            viewModel.getMovies().observe(viewLifecycleOwner, Observer { movie ->
+                if (movie != null) {
                     favoriteAdapter.setMovies(movie)
                     favoriteAdapter.notifyDataSetChanged()
                 }

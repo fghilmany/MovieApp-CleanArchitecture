@@ -2,13 +2,12 @@ package com.fghilmany.movieapp.presentation.favorite.tvseries
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-
 import com.fghilmany.movieapp.R
 import com.fghilmany.movieapp.core.ui.FavoriteTvSeriesAdapter
 import com.fghilmany.movieapp.presentation.detail.DetailActivity
@@ -35,13 +34,13 @@ class FavoriteTvSeriesFragment : Fragment() {
         if (activity != null) {
 
             val favoriteAdapter =
-                FavoriteTvSeriesAdapter{tv ->
+                FavoriteTvSeriesAdapter { tv ->
                     val i = Intent(activity, DetailActivity::class.java)
                     i.putExtra(DetailActivity.EXTRA_ID_TV, tv.id.toString())
                     startActivity(i)
                 }
-            viewModel.getMovies().observe(this, Observer { movie ->
-                if (movie != null){
+            viewModel.getMovies().observe(viewLifecycleOwner, Observer { movie ->
+                if (movie != null) {
                     favoriteAdapter.setMovies(movie)
                     favoriteAdapter.notifyDataSetChanged()
                 }

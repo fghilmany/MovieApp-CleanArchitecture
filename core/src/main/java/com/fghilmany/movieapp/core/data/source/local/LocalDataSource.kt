@@ -5,7 +5,7 @@ import com.fghilmany.movieapp.core.data.source.local.entity.TvSeriesEntity
 import com.fghilmany.movieapp.core.data.source.local.room.MovieTvDao
 import kotlinx.coroutines.flow.Flow
 
-class LocalDataSource (private val mMovieTvDao: MovieTvDao){
+class LocalDataSource(private val mMovieTvDao: MovieTvDao) {
 
 
     fun getAllMovies(): Flow<List<MovieEntity>> = mMovieTvDao.getMovie()
@@ -20,13 +20,14 @@ class LocalDataSource (private val mMovieTvDao: MovieTvDao){
 
     fun getDetailTvSeries(idTv: String): Flow<TvSeriesEntity> = mMovieTvDao.getDetailTvSeries(idTv)
 
-    suspend fun insertMovie(movies: List<MovieEntity>)= mMovieTvDao.insertMovies(movies)
+    suspend fun insertMovie(movies: List<MovieEntity>) = mMovieTvDao.insertMovies(movies)
 
-    suspend fun insertTvSeries(tvSeries: List<TvSeriesEntity>) =  mMovieTvDao.insertTvSeries(tvSeries)
+    suspend fun insertTvSeries(tvSeries: List<TvSeriesEntity>) =
+        mMovieTvDao.insertTvSeries(tvSeries)
 
-    suspend fun insertDetailMovie(movies: MovieEntity)= mMovieTvDao.insertDetailMovie(movies)
+    suspend fun insertDetailMovie(movies: MovieEntity) = mMovieTvDao.insertDetailMovie(movies)
 
-    suspend fun insertDetailTv(tvSeries: TvSeriesEntity) =  mMovieTvDao.insertDetailTv(tvSeries)
+    suspend fun insertDetailTv(tvSeries: TvSeriesEntity) = mMovieTvDao.insertDetailTv(tvSeries)
 
     fun setMovieFavorite(movie: MovieEntity, newState: Boolean) {
         movie.favorite = newState

@@ -18,8 +18,10 @@ class DataInteractor(private val dataRepository: IDataRepository) :
 
     override fun getFavoriteTvSeries() = dataRepository.getFavoriteTvSeries()
 
-    override fun setMovieFavorite(movie: Movie, state: Boolean) = dataRepository.setMovieFavorite(movie, state)
+    override fun setMovieFavorite(movie: Movie, state: Boolean) =
+        dataRepository.setMovieFavorite(movie, state)
 
-    override fun setTvSeriesFavorite(tvSeries: TvSeries, state: Boolean) = dataRepository.setTvSeriesFavorite(tvSeries, state)
+    override fun setTvSeriesFavorite(tvSeries: TvSeries, state: Boolean) =
+        dataRepository.setTvSeriesFavorite(tvSeries, state)
 
 }

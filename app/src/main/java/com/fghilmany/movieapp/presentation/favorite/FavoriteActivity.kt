@@ -1,7 +1,7 @@
 package com.fghilmany.movieapp.presentation.favorite
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.fghilmany.movieapp.R
 import kotlinx.android.synthetic.main.activity_home.*
 

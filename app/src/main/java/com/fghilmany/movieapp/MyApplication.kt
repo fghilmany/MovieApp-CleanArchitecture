@@ -11,7 +11,7 @@ import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 
 
-class MyApplication : Application(){
+class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 

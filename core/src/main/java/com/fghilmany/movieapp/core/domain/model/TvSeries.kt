@@ -1,7 +1,5 @@
 package com.fghilmany.movieapp.core.domain.model
 
-import androidx.room.ColumnInfo
-
 data class TvSeries(
     var id: Int = 0,
 

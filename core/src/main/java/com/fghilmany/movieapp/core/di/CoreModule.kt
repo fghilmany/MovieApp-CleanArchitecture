@@ -3,11 +3,11 @@ package com.fghilmany.movieapp.core.di
 import androidx.room.Room
 import com.fghilmany.movieapp.core.BuildConfig
 import com.fghilmany.movieapp.core.data.DataRepository
-import com.fghilmany.movieapp.core.domain.repository.IDataRepository
 import com.fghilmany.movieapp.core.data.source.local.LocalDataSource
 import com.fghilmany.movieapp.core.data.source.local.room.MovieTvDatabase
 import com.fghilmany.movieapp.core.data.source.remote.RemoteDataSource
 import com.fghilmany.movieapp.core.data.source.remote.network.ApiService
+import com.fghilmany.movieapp.core.domain.repository.IDataRepository
 import com.fghilmany.movieapp.core.utils.AppExecutors
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

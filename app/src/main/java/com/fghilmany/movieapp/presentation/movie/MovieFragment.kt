@@ -37,14 +37,14 @@ class MovieFragment : Fragment() {
             /*val factory = ViewModelFactory.getInstance(requireActivity())
             val viewModel = ViewModelProvider(this, factory)[MovieViewModel::class.java]
 */
-            val movieAdapter = MovieAdapter{movie ->
+            val movieAdapter = MovieAdapter { movie ->
                 val i = Intent(activity, DetailActivity::class.java)
                 i.putExtra(DetailActivity.EXTRA_ID_MOVIE, movie.id.toString())
                 startActivity(i)
             }
             viewModel.getMovies().observe(viewLifecycleOwner, Observer { movie ->
-                if (movie != null){
-                    when (movie){
+                if (movie != null) {
+                    when (movie) {
                         is Resource.Loading -> progress_bar.visibility = View.VISIBLE
                         is Resource.Success -> {
                             progress_bar.visibility = View.GONE

@@ -25,4 +25,4 @@ data class DetailTvSeriesResponse(
 
     @SerializedName("first_air_date")
     var first_air_date: String = ""
-):Parcelable
+) : Parcelable
