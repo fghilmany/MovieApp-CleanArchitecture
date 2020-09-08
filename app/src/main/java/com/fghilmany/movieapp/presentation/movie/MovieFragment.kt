@@ -34,9 +34,7 @@ class MovieFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         if (activity != null) {
-            /*val factory = ViewModelFactory.getInstance(requireActivity())
-            val viewModel = ViewModelProvider(this, factory)[MovieViewModel::class.java]
-*/
+
             val movieAdapter = MovieAdapter { movie ->
                 val i = Intent(activity, DetailActivity::class.java)
                 i.putExtra(DetailActivity.EXTRA_ID_MOVIE, movie.id.toString())

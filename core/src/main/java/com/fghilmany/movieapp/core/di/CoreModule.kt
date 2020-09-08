@@ -9,6 +9,8 @@ import com.fghilmany.movieapp.core.data.source.remote.RemoteDataSource
 import com.fghilmany.movieapp.core.data.source.remote.network.ApiService
 import com.fghilmany.movieapp.core.domain.repository.IDataRepository
 import com.fghilmany.movieapp.core.utils.AppExecutors
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -21,10 +23,14 @@ import java.util.concurrent.TimeUnit
 val databaseModule = module {
     factory { get<MovieTvDatabase>().movieTvDao() }
     single {
+        val passphrase: ByteArray = SQLiteDatabase.getBytes("fghilmany".toCharArray())
+        val factory = SupportFactory(passphrase)
         Room.databaseBuilder(
             androidContext(),
             MovieTvDatabase::class.java, "MovieTv"
-        ).fallbackToDestructiveMigration().build()
+        ).fallbackToDestructiveMigration()
+            .openHelperFactory(factory)
+            .build()
     }
 }
 

@@ -14,6 +14,8 @@ import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
 
+    private lateinit var sectionPagerAdapter: SectionPagerAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -21,7 +23,7 @@ class HomeActivity : AppCompatActivity() {
         supportActionBar?.setLogo(R.drawable.ic_tmdb_logo_long)
         supportActionBar?.setDisplayUseLogoEnabled(true)
 
-        val sectionPagerAdapter = SectionPagerAdapter(this, supportFragmentManager)
+        sectionPagerAdapter = SectionPagerAdapter(applicationContext, supportFragmentManager)
         view_pager.adapter = sectionPagerAdapter
         tabs.setupWithViewPager(view_pager)
 
@@ -40,7 +42,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_favorite -> {
-                startActivity(Intent(this, FavoriteActivity::class.java))
+                startActivity(Intent(applicationContext, FavoriteActivity::class.java))
             }
             R.id.action_notification -> {
                 val uri = Uri.parse("movieapp://notification")
@@ -50,4 +52,9 @@ class HomeActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+
+    override fun onDestroy() {
+        super.onDestroy()
+        finishAfterTransition()
+    }
 }
