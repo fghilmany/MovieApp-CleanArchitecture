@@ -1,8 +1,0 @@
-# Referenced at /home/fghilmany/Documents/MADE/Movie App/notification/build/intermediates/merged_manifests/debug/AndroidManifest.xml:26
--keep class com.fghilmany.movieapp.notification.NotificationSettingActivity { <init>(); }
-# Referenced at /home/fghilmany/Documents/MADE/Movie App/notification/src/main/res/layout/activity_notification_setting.xml:8
--keep class androidx.appcompat.widget.Toolbar { <init>(...); }
-
-# Referenced at /home/fghilmany/Documents/MADE/Movie App/notification/src/main/res/layout/activity_notification_setting.xml:2
--keep class androidx.constraintlayout.widget.ConstraintLayout { <init>(...); }
-
