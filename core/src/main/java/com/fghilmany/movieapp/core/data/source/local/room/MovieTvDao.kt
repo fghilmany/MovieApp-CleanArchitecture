@@ -38,7 +38,7 @@ interface MovieTvDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertDetailTv(tvSeries: TvSeriesEntity)
 
-    @Update()
+    @Update
     fun updateFavoriteMovie(movie: MovieEntity)
 
     @Update
