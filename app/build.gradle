@@ -22,6 +22,10 @@ android {
         buildConfigField("String", "TMDB_API_KEY", '"20a3197e5ca08eec30783357b1832998"')
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
     buildTypes {
         release {
             minifyEnabled false
