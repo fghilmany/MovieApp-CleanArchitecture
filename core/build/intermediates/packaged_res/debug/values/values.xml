@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#100F0F</color>
+    <color name="colorAccent">#90cea1 </color>
+    <color name="colorPrimary">#01b4e4</color>
+    <color name="colorPrimaryDark">#0d253f </color>
+    <color name="colorTextTertiary">#EFEFEF</color>
+    <color name="semi_black">#272727</color>
+    <color name="text_black">#000000</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <string name="add_to_favorite">Add To Favorite</string>
+    <string name="favorite">Favorite</string>
+    <string name="remove_from_favorite">Remove From Favorite</string>
+</resources>
