@@ -1,6 +1,5 @@
 package com.fghilmany.movieapp.core.data.source.remote
 
-import android.util.Log
 import com.fghilmany.movieapp.core.BuildConfig
 import com.fghilmany.movieapp.core.data.source.remote.network.ApiResponse
 import com.fghilmany.movieapp.core.data.source.remote.network.ApiService
@@ -12,6 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import timber.log.Timber
 
 class RemoteDataSource(private val apiService: ApiService?) {
 
@@ -30,7 +30,7 @@ class RemoteDataSource(private val apiService: ApiService?) {
                 }
             } catch (e: Exception) {
                 emit(ApiResponse.Error(e.toString()))
-                Log.e("RemoteDataSource", e.toString())
+                Timber.tag("ListMovieResponse").e( e.toString())
             }
         }.flowOn(Dispatchers.IO)
     }
@@ -49,7 +49,7 @@ class RemoteDataSource(private val apiService: ApiService?) {
                 }
             } catch (e: Exception) {
                 emit(ApiResponse.Error(e.toString()))
-                Log.e("RemoteDataSource", e.toString())
+                Timber.tag("ListTvResponse").e( e.toString())
             }
         }.flowOn(Dispatchers.IO)
     }
@@ -66,7 +66,7 @@ class RemoteDataSource(private val apiService: ApiService?) {
 
             } catch (e: Exception) {
                 emit(ApiResponse.Error(e.toString()))
-                Log.e("RemoteDataSource", e.toString())
+                Timber.tag("DetailMovieResponse").e( e.toString())
             }
         }.flowOn(Dispatchers.IO)
     }
@@ -82,7 +82,7 @@ class RemoteDataSource(private val apiService: ApiService?) {
                 }
             } catch (e: Exception) {
                 emit(ApiResponse.Error(e.toString()))
-                Log.e("RemoteDataSource", e.toString())
+                Timber.tag("DetailTvResponse").e( e.toString())
             }
         }.flowOn(Dispatchers.IO)
     }

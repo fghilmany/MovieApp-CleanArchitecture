@@ -1,9 +1,8 @@
 package com.fghilmany.movieapp.core.data
 
-
-import android.util.Log
 import com.fghilmany.movieapp.core.data.source.remote.network.ApiResponse
 import kotlinx.coroutines.flow.*
+import timber.log.Timber
 
 abstract class NetworkBoundResource<ResultType, RequestType> {
     private var result: Flow<Resource<ResultType>> = flow {
@@ -29,7 +28,7 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
                 }
                 is ApiResponse.Error -> {
                     onFetchFailed()
-                    Log.e("NetworkBoundService :", apiResponse.errorMessage)
+                    Timber.e(apiResponse.errorMessage)
                 }
             }
         } else {

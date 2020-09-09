@@ -64,4 +64,6 @@ ext {
 
     ext.shimmer_version = "0.5.0"
 
+    timber = "4.7.1"
+
 }

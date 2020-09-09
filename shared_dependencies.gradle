@@ -65,4 +65,7 @@ dependencies {
     //shimmer
     implementation "com.facebook.shimmer:shimmer:$shimmer_version"
 
+    //Timber
+    implementation "com.jakewharton.timber:timber:$timber"
+
 }
