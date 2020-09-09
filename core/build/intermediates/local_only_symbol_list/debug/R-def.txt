@@ -1,11 +1,9 @@
 R_DEF: Internal format may change without notice
 local
-color black
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
 color colorTextTertiary
-color semi_black
 color text_black
 color text_white
 color white

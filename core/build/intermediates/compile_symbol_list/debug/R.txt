@@ -1030,7 +1030,6 @@ int color background_floating_material_dark 0x0
 int color background_floating_material_light 0x0
 int color background_material_dark 0x0
 int color background_material_light 0x0
-int color black 0x0
 int color bright_foreground_disabled_material_dark 0x0
 int color bright_foreground_disabled_material_light 0x0
 int color bright_foreground_inverse_material_dark 0x0
@@ -1236,7 +1235,6 @@ int color secondary_text_default_material_dark 0x0
 int color secondary_text_default_material_light 0x0
 int color secondary_text_disabled_material_dark 0x0
 int color secondary_text_disabled_material_light 0x0
-int color semi_black 0x0
 int color switch_thumb_disabled_material_dark 0x0
 int color switch_thumb_disabled_material_light 0x0
 int color switch_thumb_material_dark 0x0
