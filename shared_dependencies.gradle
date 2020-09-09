@@ -68,4 +68,8 @@ dependencies {
     //Timber
     implementation "com.jakewharton.timber:timber:$timber"
 
+    //Firebase Crash Analytics
+    implementation 'com.google.firebase:firebase-analytics-ktx:17.5.0'
+    implementation 'com.google.firebase:firebase-crashlytics:17.2.1'
+
 }
