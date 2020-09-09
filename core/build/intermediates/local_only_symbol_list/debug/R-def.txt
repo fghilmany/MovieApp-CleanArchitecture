@@ -4,6 +4,8 @@ color colorAccent
 color colorPrimary
 color colorPrimaryDark
 color colorTextTertiary
+color darkgray
+color gray
 color text_black
 color text_white
 color white
@@ -19,6 +21,7 @@ id tv_date
 id tv_list_title
 id tv_rating
 layout item_movie_tv
+layout item_movie_tv_placeholder
 string add_to_favorite
 string favorite
 string remove_from_favorite

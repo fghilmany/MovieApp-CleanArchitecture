@@ -798,6 +798,26 @@ attr shape_star_noOfPoints
 attr shape_triangle_percentBottom
 attr shape_triangle_percentLeft
 attr shape_triangle_percentRight
+attr shimmer_auto_start
+attr shimmer_base_alpha
+attr shimmer_base_color
+attr shimmer_clip_to_children
+attr shimmer_colored
+attr shimmer_direction
+attr shimmer_dropoff
+attr shimmer_duration
+attr shimmer_fixed_height
+attr shimmer_fixed_width
+attr shimmer_height_ratio
+attr shimmer_highlight_alpha
+attr shimmer_highlight_color
+attr shimmer_intensity
+attr shimmer_repeat_count
+attr shimmer_repeat_delay
+attr shimmer_repeat_mode
+attr shimmer_shape
+attr shimmer_tilt
+attr shimmer_width_ratio
 attr shouldDisableView
 attr showAsAction
 attr showDividers
@@ -1064,6 +1084,7 @@ color colorAccent
 color colorPrimary
 color colorPrimaryDark
 color colorTextTertiary
+color darkgray
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -1110,6 +1131,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color gray
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color ic_launcher_background
@@ -1723,6 +1745,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable bg_detail_gray
 drawable bg_detail_white
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -1892,6 +1915,7 @@ id beginOnFirstDraw
 id beginning
 id blocking
 id bottom
+id bottom_to_top
 id bounce
 id btn_favorite
 id buttonPanel
@@ -2046,6 +2070,7 @@ id leak_canary_stacktrace
 id leak_canary_time_text
 id leak_canary_toast_icon
 id left
+id left_to_right
 id line1
 id line3
 id linear
@@ -2114,6 +2139,7 @@ id postLayout
 id progress_bar
 id progress_circular
 id progress_horizontal
+id radial
 id radio
 id rating_bar
 id ratio
@@ -2125,6 +2151,7 @@ id reverseSawtooth
 id right
 id right_icon
 id right_side
+id right_to_left
 id rounded
 id row_index_key
 id rv_favorite_movie
@@ -2226,6 +2253,7 @@ id toggle
 id toolbar
 id top
 id topPanel
+id top_to_bottom
 id touch_outside
 id transitionToEnd
 id transitionToStart
@@ -2319,6 +2347,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_detail
+layout activity_detail_placeholder
 layout activity_favorite
 layout activity_home
 layout custom_dialog
@@ -2344,6 +2373,7 @@ layout fragment_movie
 layout fragment_tv_series
 layout image_frame
 layout item_movie_tv
+layout item_movie_tv_placeholder
 layout leak_canary_about_screen
 layout leak_canary_heap_analysis_failure_screen
 layout leak_canary_heap_dump_leak_title
@@ -3474,6 +3504,7 @@ styleable SeekBarPreference android_layout android_max adjustable min seekBarInc
 styleable ShapeAppearance cornerFamily cornerFamilyBottomLeft cornerFamilyBottomRight cornerFamilyTopLeft cornerFamilyTopRight cornerSize cornerSizeBottomLeft cornerSizeBottomRight cornerSizeTopLeft cornerSizeTopRight
 styleable ShapeOfView shape_clip_drawable
 styleable ShapeableImageView shapeAppearance shapeAppearanceOverlay strokeColor strokeWidth
+styleable ShimmerFrameLayout shimmer_auto_start shimmer_base_alpha shimmer_base_color shimmer_clip_to_children shimmer_colored shimmer_direction shimmer_dropoff shimmer_duration shimmer_fixed_height shimmer_fixed_width shimmer_height_ratio shimmer_highlight_alpha shimmer_highlight_color shimmer_intensity shimmer_repeat_count shimmer_repeat_delay shimmer_repeat_mode shimmer_shape shimmer_tilt shimmer_width_ratio
 styleable Slider android_value android_stepSize android_valueFrom android_valueTo haloColor haloRadius labelBehavior labelStyle thumbColor thumbElevation thumbRadius tickColor tickColorActive tickColorInactive trackColor trackColorActive trackColorInactive trackHeight
 styleable Snackbar snackbarButtonStyle snackbarStyle snackbarTextViewStyle
 styleable SnackbarLayout android_maxWidth actionTextColorAlpha animationMode backgroundOverlayColorAlpha backgroundTint backgroundTintMode elevation maxActionInlineWidth

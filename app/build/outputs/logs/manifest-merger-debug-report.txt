@@ -36,6 +36,7 @@ MERGED from [androidx.test.espresso:espresso-idling-resource:3.2.0] /home/fghilm
 MERGED from [net.zetetic:android-database-sqlcipher:4.4.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/e9b92b89e63d16664f8e0edc919b2ffc/jetified-android-database-sqlcipher-4.4.0/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/7fc5cfb53350ee7ba6b4f489f7500c4b/sqlite-framework-2.0.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite:2.1.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/ca94bf7de7ebde4c419f951434f9a89f/sqlite-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.facebook.shimmer:shimmer:0.5.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/d2cb6fd84523001c8918231b0d3274ea/jetified-shimmer-0.5.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.squareup.leakcanary:leakcanary-android-core:2.4] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/b6aa861499349b04a8fb745d2e8a30d2/jetified-leakcanary-android-core-2.4/AndroidManifest.xml:17:1-75:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/9179a6a14a882ca7a3f9a0ad114f4932/jetified-lifecycle-livedata-core-ktx-2.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.squareup.leakcanary:leakcanary-object-watcher-android-androidx:2.4] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/9ef8936fc06e73cf1f47c55659555a0a/jetified-leakcanary-object-watcher-android-androidx-2.4/AndroidManifest.xml:2:1-7:12
@@ -241,6 +242,8 @@ MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/fghilmany/.gradle/cac
 MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/7fc5cfb53350ee7ba6b4f489f7500c4b/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite:2.1.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/ca94bf7de7ebde4c419f951434f9a89f/sqlite-2.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.sqlite:sqlite:2.1.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/ca94bf7de7ebde4c419f951434f9a89f/sqlite-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.facebook.shimmer:shimmer:0.5.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/d2cb6fd84523001c8918231b0d3274ea/jetified-shimmer-0.5.0/AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.shimmer:shimmer:0.5.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/d2cb6fd84523001c8918231b0d3274ea/jetified-shimmer-0.5.0/AndroidManifest.xml:5:5-44
 MERGED from [com.squareup.leakcanary:leakcanary-android-core:2.4] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/b6aa861499349b04a8fb745d2e8a30d2/jetified-leakcanary-android-core-2.4/AndroidManifest.xml:20:5-44
 MERGED from [com.squareup.leakcanary:leakcanary-android-core:2.4] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/b6aa861499349b04a8fb745d2e8a30d2/jetified-leakcanary-android-core-2.4/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/9179a6a14a882ca7a3f9a0ad114f4932/jetified-lifecycle-livedata-core-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
