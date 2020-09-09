@@ -1,4 +1,4 @@
-#Wed Sep 09 10:11:55 WIB 2020
+#Wed Sep 09 12:04:03 WIB 2020
 base.0=/home/fghilmany/Documents/MADE/Movie App/notification/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

@@ -41,6 +41,7 @@ class FavoriteTvSeriesFragment : Fragment() {
                 }
             viewModel.getMovies().observe(viewLifecycleOwner, Observer { movie ->
                 if (movie != null) {
+                    view_empty.visibility = if (movie.isNotEmpty()) View.GONE else View.VISIBLE
                     favoriteAdapter.setMovies(movie)
                     favoriteAdapter.notifyDataSetChanged()
                 }

@@ -11,6 +11,7 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.0.0] /home/fghilmany/.
 MERGED from [com.google.android.material:material:1.2.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/3d86e6c1a0cb631fda3be352df71e3b9/material-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.florent37:shapeofview:1.4.5] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/8b5f3570229888ece77a973183e64fa0/jetified-shapeofview-1.4.5/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.preference:preference:1.1.1] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/97f551cfc21d974982786d746fcb40cd/preference-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.airbnb.android:lottie:3.4.1] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/554d43fcab10128fa334bed2460f9a6f/jetified-lottie-3.4.1/AndroidManifest.xml:2:1-11:12
 MERGED from [org.koin:koin-android-viewmodel:2.1.5] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/79fa3e800155a84daf6124c27c3cf470/jetified-koin-android-viewmodel-2.1.5/AndroidManifest.xml:2:1-9:12
 MERGED from [org.koin:koin-android-scope:2.1.5] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/c205c37c865890c72a977d415ec8ceab/jetified-koin-android-scope-2.1.5/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat:1.2.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/4a13b9edce4407ac4f5ba6ce887cba54/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
@@ -102,6 +103,8 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.0.0] /home/fghilmany/.
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/eb1bd16d8125f8916850f6c269a64dc8/constraintlayout-2.0.0/AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.material:material:1.2.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/3d86e6c1a0cb631fda3be352df71e3b9/material-1.2.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.2.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/3d86e6c1a0cb631fda3be352df71e3b9/material-1.2.0/AndroidManifest.xml:22:5-20
+MERGED from [com.airbnb.android:lottie:3.4.1] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/554d43fcab10128fa334bed2460f9a6f/jetified-lottie-3.4.1/AndroidManifest.xml:9:5-20
+MERGED from [com.airbnb.android:lottie:3.4.1] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/554d43fcab10128fa334bed2460f9a6f/jetified-lottie-3.4.1/AndroidManifest.xml:9:5-20
 MERGED from [org.koin:koin-android-viewmodel:2.1.5] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/79fa3e800155a84daf6124c27c3cf470/jetified-koin-android-viewmodel-2.1.5/AndroidManifest.xml:7:5-20
 MERGED from [org.koin:koin-android-viewmodel:2.1.5] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/79fa3e800155a84daf6124c27c3cf470/jetified-koin-android-viewmodel-2.1.5/AndroidManifest.xml:7:5-20
 MERGED from [org.koin:koin-android-scope:2.1.5] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/c205c37c865890c72a977d415ec8ceab/jetified-koin-android-scope-2.1.5/AndroidManifest.xml:7:5-20
@@ -188,6 +191,8 @@ MERGED from [com.github.florent37:shapeofview:1.4.5] /home/fghilmany/.gradle/cac
 MERGED from [com.github.florent37:shapeofview:1.4.5] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/8b5f3570229888ece77a973183e64fa0/jetified-shapeofview-1.4.5/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.preference:preference:1.1.1] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/97f551cfc21d974982786d746fcb40cd/preference-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.preference:preference:1.1.1] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/97f551cfc21d974982786d746fcb40cd/preference-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.airbnb.android:lottie:3.4.1] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/554d43fcab10128fa334bed2460f9a6f/jetified-lottie-3.4.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:3.4.1] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/554d43fcab10128fa334bed2460f9a6f/jetified-lottie-3.4.1/AndroidManifest.xml:5:5-7:41
 MERGED from [org.koin:koin-android-viewmodel:2.1.5] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/79fa3e800155a84daf6124c27c3cf470/jetified-koin-android-viewmodel-2.1.5/AndroidManifest.xml:5:5-44
 MERGED from [org.koin:koin-android-viewmodel:2.1.5] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/79fa3e800155a84daf6124c27c3cf470/jetified-koin-android-viewmodel-2.1.5/AndroidManifest.xml:5:5-44
 MERGED from [org.koin:koin-android-scope:2.1.5] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/c205c37c865890c72a977d415ec8ceab/jetified-koin-android-scope-2.1.5/AndroidManifest.xml:5:5-44

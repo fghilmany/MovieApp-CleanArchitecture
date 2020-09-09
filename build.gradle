@@ -60,4 +60,6 @@ ext {
 
     leakCanary = "2.4"
 
+    ext.lottie_version = "3.4.1"
+
 }
